@@ -29,6 +29,7 @@ In theory it would navigate to the description of the term searched up and then 
 
 ![](images/wikitest.png)
 
+Using entirely java for this was probably a terrible idea. If a combination of html and javascript was used for the bot It would be exponentially easier to get everything working including the interface/GUI and requesting out for the jsons. 
 
 ## List of features of past milestones:
 
