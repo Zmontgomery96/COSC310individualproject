@@ -6,6 +6,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+
 // import org.jsoup.Jsoup;
 // import org.jsoup.nodes.Document;
 // import org.jsoup.select.Elements;
@@ -24,18 +25,20 @@ public interface WikiAPI {
     }
 
     public static String doAThing(String something){
-
+                //for requesting the json
         HttpRequest request = HttpRequest.newBuilder()
-        //for using the query API
 				.uri(URI.create("https://www.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + something))
 				.method("GET", HttpRequest.BodyPublishers.noBody())
 				.build();
+                
                 //we get the body/json 
                 //need to parse the json somehow
+                
 		HttpResponse<String> response;
 		try {
 			response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-			inputArray[1] = response.body();
+			//currently returning the whole HTML elements of it and no json
+            inputArray[1] = response.body();
             // temp = response.body();
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
