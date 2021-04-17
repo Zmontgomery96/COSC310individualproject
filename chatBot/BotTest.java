@@ -1,4 +1,4 @@
-package chatBot;
+// package chatBot;
 import org.junit.jupiter.api.BeforeEach;
 // import org.junit.jupiter.api.DisplayName; //Can be used to name the tests
 // import org.junit.jupiter.api.RepeatedTest; //Can be used to easily run a test multiple times

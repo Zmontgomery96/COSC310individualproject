@@ -1,4 +1,4 @@
-package chatBot;
+// package chatBot;
 
 import java.io.IOException;
 import java.net.URI;

@@ -1,4 +1,4 @@
-package chatBot;
+// package chatBot;
 
 import javax.swing.*;
 import java.awt.*;

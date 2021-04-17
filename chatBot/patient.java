@@ -1,4 +1,4 @@
-package chatBot;
+// package chatBot;
 
 
 public class patient implements Comparable<patient> {

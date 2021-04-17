@@ -1,4 +1,4 @@
-package chatBot;
+// package chatBot;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -11,7 +11,7 @@ import javax.swing.text.AbstractDocument.BranchElement;
 
 
 
-public class Main extends synonymAPI   {
+public class Main extends synonymAPI implements WikiAPI{
 		
 	static PriorityQueue<patient> patientQ = new PriorityQueue<>();
 	static patient p1 = new patient("Jon","Jones","2020",2);
@@ -374,7 +374,7 @@ public class Main extends synonymAPI   {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		
+		Main main;
 		gui GUI = new gui();
 		
 		
@@ -390,6 +390,7 @@ public class Main extends synonymAPI   {
 		String answer ="";
 		String end = "";
 		String review = "";
+		String WikiAPIinput = "";
 		String symptomsSentence ="";
 		String worseSymptom = "";
 		int durationOfSymptoms = 0;
@@ -492,38 +493,50 @@ public class Main extends synonymAPI   {
 				botOutput("Can you give a brief description of your symptoms?");
 				}
 			break;
-			
-		case 5: // Symptoms
+		//this is the wiki api integration	
+		case 5: // WikiApi
 			symptomsSentence = answer;
 			level =6;
+			//
+			botOutput("Enter in what you think it could be: ");
+			
+			break;	
+
+		case 6: // Symptoms
+		//this is where we seach with the input
+			WikiAPIinput = answer;
+			
+			botOutput(WikiAPI.doAThing(WikiAPIinput));
+
+			level =7;
 			botOutput("If you are having multiple symptoms, which is bothering you the most? (if not please type 'none')");
 			break;
 			
-		case 6: //Which is the worse symptom
+		case 7: //Which is the worse symptom
 			worseSymptom = answer;
 			botOutput("If you are having chest pains, trouble breathing, severe bleeding, or extreme dizziness, please stop using this bot and Call 911.");
 			botOutput("How many days have you experienced these symptoms?");
 			level =7;
 			break;
 			
-		case 7: // get duration of symptoms
+		case 8: // get duration of symptoms
 		try{
 			durationOfSymptoms = Integer.parseInt(answer);}
 			catch (Exception e ){botOutput("Sorry, something went wrong please enter the number of days again.");break;}
 			botOutput("Okay. Would you prefer a male or female doctor?");
-			level =8;
+			level =9;
 			break;
-		case 8:// gets dr sex/gender preference
+		case 9:// gets dr sex/gender preference
 			drSexPreference = answer;
 			if(!(drSexPreference.matches("male(.*)") || drSexPreference.matches("female(.*)"))) {
 				botOutput("Please answer either 'male' or 'female'");
 			}else {	
 				botOutput("Sounds good. Do you have a family doctor?" );
-				level =9;	
+				level =10;	
 			}
 			break;
 			
-		case 9: // branch for get family doctor if no family doctor end chat
+		case 10: // branch for get family doctor if no family doctor end chat
 		
 			if(answer.matches("(.*)no(.*)")) {
 				botOutput("Okay, thank you for specifying that. We have all of the information that we need.");
@@ -534,13 +547,13 @@ public class Main extends synonymAPI   {
 				
 			}
 			else if(answer.equalsIgnoreCase("yes")) {
-				level =10;
+				level =11;
 				botOutput("What is your family doctors name?");
 			}
 			
 			break;
 			
-		case 10: // get family doctors name
+		case 11: // get family doctors name
 			familyDoctor = answer;
 			if(!familyDoctor.toLowerCase().matches("dr.(.*)")) {
 				botOutput("Please enter a valid family doctors name (Dr. ..)");
@@ -552,7 +565,7 @@ public class Main extends synonymAPI   {
 			
 			break;
 			
-		case 11:// extra method in case we add more.
+		case 12:// extra method in case we add more.
 			break;
 			
 		case 30: // TODO: Add more verfication 
