@@ -1,4 +1,4 @@
-# COSC-310-projectgroup
+# COSC-310-Individualproject
 
 The patient wants to either book an appointment or verify the appointment is booked so they open the chatbot:
 There is a check to a small dataset to show its application but it can easily be used to link up to a real database of users.
@@ -20,8 +20,17 @@ The bot throws the users input out to an API that then allows it to see if it is
 
 There is a review at the end to see how the user liked the bot if they wish to participate.
 
-## List of features:
+# New Features for the individual project:
+I have tried to implement the Wikipedia API to allow the user to search for what they think they might have and then print out a brief description of what they searched.
 
+Currently after many many hours it takes the json but I still have yet to figure out how to parse it
+
+In theory it would navigate to the description of the term searched up and then print the first 150-250 characters of the article to give the user an idea of what it is.
+
+![](images/wikitest.png)
+
+
+## List of features of past milestones:
 
 #### a synonym API:
 The API allows us to throw what the user puts in into something that decodes it and relates it to whether or not the response is positive or negative to the question. Without this it would be loads more coding to account for whatever the user inputs or writing every response they can put in at each point. 
@@ -43,4 +52,3 @@ This is included with the API. Now if the user accidentally adds a character the
 
 ![](images/spellCheck.png)
 
-    
