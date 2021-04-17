@@ -23,13 +23,13 @@ There is a review at the end to see how the user liked the bot if they wish to p
 # New Features for the individual project:
 I have tried to implement the Wikipedia API to allow the user to search for what they think they might have and then print out a brief description of what they searched.
 
-Currently after many many hours it takes the json but I still have yet to figure out how to parse it
+Currently after many many hours it takes the json but I still have yet to figure out how to parse it just using java
 
 In theory it would navigate to the description of the term searched up and then print the first 150-250 characters of the article to give the user an idea of what it is.
 
 ![](images/wikitest.png)
 
-Using entirely java for this was probably a terrible idea. If a combination of html and javascript was used for the bot It would be exponentially easier to get everything working including the interface/GUI and requesting out for the jsons. 
+Using entirely java for this was probably a terrible idea. If a combination of html, php and javascript was used for the bot It would be exponentially easier to get everything working including the interface/GUI and requesting out for the jsons. 
 
 ## List of features of past milestones:
 
